@@ -1,0 +1,14 @@
+{
+  "tweets": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "body": "some tweet"
+    },
+    {
+      "title": "Hola",
+      "body": "tweeet",
+      "id": 2
+    }
+  ]
+}
