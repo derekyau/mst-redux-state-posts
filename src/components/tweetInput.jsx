@@ -3,6 +3,7 @@ import { Grid, Row, Col, Well, Button, FormControl } from "react-bootstrap";
 import { connect } from "react-redux";
 import * as actions from "../redux/actions/creators";
 import { MAX_TWEET_LENGTH } from "../redux/reducers/tweetReducer";
+import { Spinner } from "./spinner";
 
 class TweetInput extends Component {
   _handleButtonClicked = () => {
@@ -21,6 +22,7 @@ class TweetInput extends Component {
       hasErrors,
       charCount,
       buttonDisabled,
+      isLoading,
     } = this.props;
     const errorClass = hasErrors ? "red" : "";
 
@@ -41,14 +43,19 @@ class TweetInput extends Component {
             placeholder="Type here..."
           />
           <br />
-          <Button
-            onClick={this._handleButtonClicked}
-            disabled={buttonDisabled}
-            className="pull-right"
-            bsStyle="primary"
-          >
-            Tweet
-          </Button>
+          <div className="pull-right">
+            {isLoading ? (
+              <Spinner />
+            ) : (
+              <Button
+                onClick={this._handleButtonClicked}
+                disabled={buttonDisabled}
+                bsStyle="primary"
+              >
+                Tweet
+              </Button>
+            )}
+          </div>
         </Col>
       </Row>
     );
@@ -64,6 +71,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
   const { newTweet, charCount } = state.tweets;
+  const { isLoading } = state.ui;
   // doesn't really belong in the reducer? though it could be there? since reducers seem to be more for data, but I suppose it could be moved there
   const previewText = newTweet || "Start typing below...";
   const hasErrors = state.tweets.isOverLimit;
@@ -75,6 +83,7 @@ const mapStateToProps = state => {
     hasErrors,
     charCount,
     buttonDisabled,
+    isLoading,
   };
 };
 

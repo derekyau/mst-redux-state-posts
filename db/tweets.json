@@ -1,12 +1,8 @@
 {
   "tweets": [
     {
-      "body": "dsfdf",
+      "body": "Hello Tweeeter World!",
       "id": 1
-    },
-    {
-      "body": "sfsdfdsf",
-      "id": 2
     }
   ]
 }

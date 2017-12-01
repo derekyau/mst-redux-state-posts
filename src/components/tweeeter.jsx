@@ -4,6 +4,7 @@ import { Grid, Row, Col, Well, Button, FormControl } from "react-bootstrap";
 import TweetInput from "./tweetInput";
 import { Tweet } from "./tweet";
 import * as actions from "../redux/actions/creators";
+import { Spinner } from "./spinner";
 
 class Tweeeter extends Component {
   componentDidMount() {
@@ -31,6 +32,16 @@ class Tweeeter extends Component {
     );
   }
 
+  _renderSpinner() {
+    return (
+      <Row>
+        <Col md={1} className="col-centered">
+          <Spinner />
+        </Col>
+      </Row>
+    );
+  }
+
   render() {
     const { isFetching } = this.props;
 
@@ -40,7 +51,7 @@ class Tweeeter extends Component {
         <br />
         <TweetInput />
         <hr />
-        {isFetching && <div>SPINNER</div>}
+        {isFetching && this._renderSpinner()}
         {this._renderTweetList()}
       </Grid>
     );

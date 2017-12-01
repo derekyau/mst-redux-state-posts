@@ -9,17 +9,17 @@ export const TweeeterApi = () => {
   });
 
   const getTweets = async () => {
-    // await delay(1000);
+    // await delay(2000);
     return client.get("tweets");
   };
 
   const createTweet = async body => {
-    await delay(10);
+    // await delay(3000);
     return client.post("tweets", { body });
   };
 
   const deleteTweet = async tweetId => {
-    await delay(10);
+    // await delay(10);
     return client.delete(`tweets/${tweetId}`);
   };
 
