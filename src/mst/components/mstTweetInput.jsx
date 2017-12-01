@@ -9,8 +9,6 @@ import { Spinner } from "./spinner";
 @observer
 export default class MSTTweetInput extends Component {
   _handleButtonClicked = () => {
-    // const { newTweet: body } = this.props;
-    // this.props.createTweet(body);
     this.props.tweetStore.publishNewTweet();
   };
 
