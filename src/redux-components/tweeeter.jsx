@@ -47,7 +47,7 @@ class Tweeeter extends Component {
 
     return (
       <Grid>
-        <h1>Tweeeter</h1>
+        <h1>Redux Tweeeter</h1>
         <br />
         <TweetInput />
         <hr />
