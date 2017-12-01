@@ -5,7 +5,7 @@ import * as actions from "../actions/creators";
 import { MAX_TWEET_LENGTH } from "../reducers/tweetReducer";
 import { Spinner } from "./spinner";
 
-class TweetInput extends Component {
+class ReduxTweetInput extends Component {
   _handleButtonClicked = () => {
     const { newTweet: body } = this.props;
     this.props.createTweet(body);
@@ -87,4 +87,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TweetInput);
+export default connect(mapStateToProps, mapDispatchToProps)(ReduxTweetInput);

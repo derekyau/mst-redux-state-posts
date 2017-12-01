@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Grid, Row, Col, Well, Button, FormControl } from "react-bootstrap";
-import TweetInput from "./tweetInput";
-import { Tweet } from "./tweet";
+import ReduxTweetInput from "./reduxTweetInput";
+import { ReduxTweet } from "./reduxTweet";
 import * as actions from "../actions/creators";
 import { Spinner } from "./spinner";
 
-class Tweeeter extends Component {
+class ReduxTweeeter extends Component {
   componentDidMount() {
     this.props.getTweets();
   }
@@ -17,7 +17,7 @@ class Tweeeter extends Component {
 
   _renderTweetList() {
     const tweetList = this.props.tweets.map(tweet => (
-      <Tweet
+      <ReduxTweet
         key={tweet.id}
         tweet={tweet}
         onDeleteClicked={this._onDeleteClicked}
@@ -49,7 +49,7 @@ class Tweeeter extends Component {
       <Grid>
         <h1>Redux Tweeeter</h1>
         <br />
-        <TweetInput />
+        <ReduxTweetInput />
         <hr />
         {isFetching && this._renderSpinner()}
         {this._renderTweetList()}
@@ -75,4 +75,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Tweeeter);
+export default connect(mapStateToProps, mapDispatchToProps)(ReduxTweeeter);

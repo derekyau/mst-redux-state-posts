@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // redux components
-import { default as ReduxTweeeter } from "./tweeeter";
+import ReduxTweeeter from "./reduxTweeeter";
 import { TweeeterApi } from "../../lib/api";
 
 //redux setup

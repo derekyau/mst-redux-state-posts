@@ -1,7 +1,7 @@
 import React from "react";
 import { Well } from "react-bootstrap";
 
-export const Tweet = props => {
+export const ReduxTweet = props => {
   const { body } = props.tweet;
   return (
     <li>
