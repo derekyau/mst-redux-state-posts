@@ -1,13 +1,11 @@
 {
   "tweets": [
     {
-      "id": 1,
-      "title": "json-server",
-      "body": "some tweet"
+      "body": "dsfdf",
+      "id": 1
     },
     {
-      "title": "Hola",
-      "body": "tweeet",
+      "body": "sfsdfdsf",
       "id": 2
     }
   ]

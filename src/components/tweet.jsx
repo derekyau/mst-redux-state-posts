@@ -1,12 +1,20 @@
-import React, { Component } from "react";
-import { Grid, Row, Col, Well, Button, FormControl } from "react-bootstrap";
+import React from "react";
+import { Well } from "react-bootstrap";
 
-export class Tweet extends Component {
-  render() {
-    return (
-      <li>
-        <Well>This is a tweet</Well>
-      </li>
-    );
-  }
-}
+export const Tweet = props => {
+  const { body } = props.tweet;
+  return (
+    <li>
+      <Well>
+        {body}
+        <a
+          className="pull-right"
+          href="#"
+          onClick={() => props.onDeleteClicked(props.tweet.id)}
+        >
+          Delete
+        </a>
+      </Well>
+    </li>
+  );
+};

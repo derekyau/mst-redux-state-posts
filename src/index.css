@@ -12,3 +12,7 @@ ul {
   float: none;
   margin: 0 auto;
 }
+
+.red {
+  color: red;
+}
