@@ -47,7 +47,9 @@ class ReduxTweeeter extends Component {
 
     return (
       <Grid>
-        <h1>Redux Tweeeter</h1>
+        <a href="/">
+          <h1>Redux Tweeeter</h1>
+        </a>
         <br />
         <ReduxTweetInput />
         <hr />

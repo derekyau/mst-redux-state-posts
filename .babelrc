@@ -1,0 +1,4 @@
+{
+  "presets": ["stage-1", "react"],
+  "plugins": ["transform-decorators-legacy"]
+}
