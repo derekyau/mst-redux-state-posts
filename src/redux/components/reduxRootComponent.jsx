@@ -2,15 +2,15 @@ import React, { Component } from "react";
 
 // redux components
 import { default as ReduxTweeeter } from "./tweeeter";
-import { TweeeterApi } from "../lib/api";
+import { TweeeterApi } from "../../lib/api";
 
 //redux setup
 import { Provider } from "react-redux";
-import rootStore from "../redux/reducers";
+import rootStore from "../reducers";
 import { createStore, applyMiddleware } from "redux";
 import createSagaMiddleware from "redux-saga";
 
-import { getRootSaga } from "../redux/sagas";
+import { getRootSaga } from "../sagas";
 
 const api = TweeeterApi();
 const sagaMiddleware = createSagaMiddleware();

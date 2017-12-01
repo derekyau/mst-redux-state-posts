@@ -1,5 +1,5 @@
 import { takeLatest } from "redux-saga";
-import Types from "../actions/types";
+import Types from "../types";
 import { getTweets, createTweet, deleteTweet } from "./tweeeterSaga";
 
 export const getRootSaga = api => {

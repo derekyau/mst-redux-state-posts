@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Grid, Row, Col, Well, Button, FormControl } from "react-bootstrap";
 import { connect } from "react-redux";
-import * as actions from "../redux/actions/creators";
-import { MAX_TWEET_LENGTH } from "../redux/reducers/tweetReducer";
+import * as actions from "../actions/creators";
+import { MAX_TWEET_LENGTH } from "../reducers/tweetReducer";
 import { Spinner } from "./spinner";
 
 class TweetInput extends Component {

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-import ReduxRootComponent from "./redux-components/reduxRootComponent";
-import MSTRootComponent from "./mst-components/mstRootComponent";
+import ReduxRootComponent from "./redux/components/reduxRootComponent";
+import MSTRootComponent from "./mst/components/mstRootComponent";
 
 import { Row, Col, Button, Pager } from "react-bootstrap";
 

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Grid, Row, Col, Well, Button, FormControl } from "react-bootstrap";
 import TweetInput from "./tweetInput";
 import { Tweet } from "./tweet";
-import * as actions from "../redux/actions/creators";
+import * as actions from "../actions/creators";
 import { Spinner } from "./spinner";
 
 class Tweeeter extends Component {
