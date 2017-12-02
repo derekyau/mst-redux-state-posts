@@ -18,7 +18,6 @@ export function* createTweet(api, action) {
 
   if (response.status == 201) {
     yield put(actions.tweetCreateSuccess(response.data));
-    yield put(actions.tweetListRequest());
   } else {
     yield put(actions.tweetCreateFailure("API Failed"));
   }
@@ -28,8 +27,7 @@ export function* deleteTweet(api, action) {
   const response = yield call(api.deleteTweet, action.tweetId);
 
   if (response.status == 200) {
-    yield put(actions.tweetDeleteSuccess(response.data));
-    yield put(actions.tweetListRequest());
+    yield put(actions.tweetDeleteSuccess(action.tweetId));
   } else {
     yield put(actions.tweetDeleteFailure("API Failed"));
   }

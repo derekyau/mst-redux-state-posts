@@ -10,8 +10,8 @@ export const tweetListFailure = reason =>
 
 export const tweetDeleteRequest = tweetId =>
   createAction(Types.TWEET_DELETE_REQUEST, { tweetId });
-export const tweetDeleteSuccess = () =>
-  createAction(Types.TWEET_DELETE_SUCCESS);
+export const tweetDeleteSuccess = tweetId =>
+  createAction(Types.TWEET_DELETE_SUCCESS, { tweetId });
 export const tweetDeleteFailure = reason =>
   createAction(Types.TWEET_DELETE_FAILURE, { reason });
 
