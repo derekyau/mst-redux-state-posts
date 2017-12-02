@@ -22,7 +22,6 @@ export const TweetModel = types
       const response = yield env.api.deleteTweet(self.id);
 
       if (response.status == 200) {
-        //lets ghetto refresh the full list when deleted
         const { tweetStore } = getRoot(self);
         tweetStore.removeTweet(self);
       }
