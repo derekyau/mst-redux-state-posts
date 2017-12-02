@@ -27,7 +27,7 @@ export const TweetStoreModel = types
       return self.isOverLimit ? "red" : "";
     },
     get buttonDisabled() {
-      return self.isOverLimit;
+      return self.isOverLimit || self.charCount == 0;
     },
   }))
   .actions(self => ({
