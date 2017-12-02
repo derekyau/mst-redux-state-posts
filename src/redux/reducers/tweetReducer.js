@@ -15,7 +15,7 @@ const reducer = (state = INITIAL_STATE, action) => {
       return { ...state, tweets: action.tweets };
 
     case types.TWEET_CREATE_SUCCESS:
-      return { ...state, newTweet: "" };
+      return { ...state, newTweet: "", charCount: 0 };
 
     case types.TWEET_DRAFT:
       const chars = action.body.length;

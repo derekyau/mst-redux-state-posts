@@ -3,7 +3,6 @@ import types from "../types";
 const INITIAL_STATE = {
   isFetching: false,
   isLoading: false,
-  buttonColor: "blue",
 };
 
 const reducer = (state = INITIAL_STATE, action) => {

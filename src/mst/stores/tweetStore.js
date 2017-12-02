@@ -9,7 +9,6 @@ export const TweetStoreModel = types
   .model("TweetStoreModel")
   .props({
     tweets: types.optional(types.array(TweetModel), []),
-    // newTweet: types.reference(TweetModel),
     newTweet: types.optional(TweetModel, TWEET_MODEL_DEFAULT_STATE),
     isFetching: types.optional(types.boolean, false),
     isLoading: types.optional(types.boolean, false),
