@@ -29,16 +29,12 @@ const reducer = (state = INITIAL_STATE, action) => {
       };
 
     case types.TWEET_DRAFT:
-      const chars = action.body.length;
-      let overLimit = false;
-      if (chars > MAX_TWEET_LENGTH) {
-        overLimit = true;
-      }
+      const charCount = action.body.length;
       return {
         ...state,
         newTweet: action.body,
-        isOverLimit: overLimit,
-        charCount: chars,
+        isOverLimit: charCount > MAX_TWEET_LENGTH,
+        charCount,
       };
 
     default:
