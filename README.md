@@ -5,6 +5,11 @@ modern state-management solutions for React (Redux / MST mobx-state-tree). It
 aims to show how the same app may be implemented using the two different
 technologies, and highlights some differences in their philosophy/how they work.
 
+## Install dependencies
+```
+yarn
+```
+
 ## Starting backend-server
 
 ```
