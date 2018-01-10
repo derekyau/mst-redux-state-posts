@@ -36,9 +36,7 @@ export const TweetStoreModel = types
     },
 
     removeTweet(tweet) {
-      //for some reason calling destroy here causes issues... research this
-      // destroy(tweet);
-      detach(tweet);
+      self.tweets.remove(tweet);
     },
 
     publishNewTweet: flow(function*() {
