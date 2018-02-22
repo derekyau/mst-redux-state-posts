@@ -2,8 +2,9 @@ import { types, flow, getEnv, destroy, detach } from "mobx-state-tree";
 import { TweetModel } from "../models/tweetModel";
 import {
   TWEET_MODEL_DEFAULT_STATE,
-  MAX_TWEET_LENGTH,
+  MAX_TWEET_LENGTH
 } from "../models/tweetModel";
+import { toJS } from "mobx";
 
 export const TweetStoreModel = types
   .model("TweetStoreModel")
@@ -11,7 +12,7 @@ export const TweetStoreModel = types
     tweets: types.optional(types.array(TweetModel), []),
     newTweet: types.optional(TweetModel, TWEET_MODEL_DEFAULT_STATE),
     isFetching: types.optional(types.boolean, false),
-    isLoading: types.optional(types.boolean, false),
+    isLoading: types.optional(types.boolean, false)
   })
   .views(self => ({
     get previewText() {
@@ -28,16 +29,20 @@ export const TweetStoreModel = types
     },
     get buttonDisabled() {
       return self.isOverLimit || self.charCount == 0;
-    },
+    }
   }))
   .actions(self => ({
     draftNewTweet(val) {
       self.newTweet.body = val;
     },
 
-    removeTweet(tweet) {
-      self.tweets.remove(tweet);
-    },
+    removeTweet: flow(function*(tweet) {
+      const env = getEnv(self);
+      const response = yield env.api.deleteTweet(tweet.id);
+      if (response.status == 200) {
+        self.tweets.remove(tweet);
+      }
+    }),
 
     publishNewTweet: flow(function*() {
       self.isLoading = true;
@@ -62,10 +67,10 @@ export const TweetStoreModel = types
       } else {
         //error
       }
-    }),
+    })
   }))
   .actions(self => ({
     afterCreate() {
       self.getTweets();
-    },
+    }
   }));
