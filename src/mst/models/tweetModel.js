@@ -16,6 +16,11 @@ export const TweetModel = types
     id: types.identifier(types.number),
     body: types.optional(types.string, "")
   })
+  .views(self => ({
+    get isLongerThanFiveChars() {
+      return self.body.length > 5;
+    }
+  }))
   .actions(self => ({
     create: flow(function*() {
       const env = getEnv(self);
